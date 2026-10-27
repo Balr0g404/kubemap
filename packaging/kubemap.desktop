@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Kubemap
+Comment=Cartographie locale du cluster Kubernetes
+Exec=kubemap
+Icon=kubemap
+Terminal=false
+Categories=Development;Network;
+StartupWMClass=kubemap

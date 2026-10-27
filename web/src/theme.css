@@ -1,0 +1,60 @@
+:root {
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --v-font-body: var(--font-primary);
+  --color-primary-base: 27, 27, 39;
+  --color-brand: 50, 108, 229;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px;
+  --radius-container: 12px; --radius-card: 10px; --radius-element: 6px; --radius-chip: 6px;
+  --sans: var(--font-primary);
+  --mono: ui-monospace, 'SF Mono', monospace;
+}
+.v-application {
+  --bg: rgb(var(--v-theme-background));
+  --surface: rgb(var(--v-theme-surface));
+  --surface-2: color-mix(in srgb, var(--surface) 95%, rgb(var(--v-theme-secondary)));
+  --fg: rgb(var(--v-theme-on-surface));
+  --muted: color-mix(in srgb, var(--fg) 67%, var(--surface));
+  --line: color-mix(in srgb, var(--fg) 14%, var(--surface));
+  --accent: rgb(var(--v-theme-secondary));
+  --accent-soft: color-mix(in srgb, var(--accent) 13%, var(--surface));
+  --ok: rgb(var(--v-theme-success)); --warn: rgb(var(--v-theme-warning)); --bad: rgb(var(--v-theme-error));
+  --ok-soft: color-mix(in srgb, var(--ok) 14%, var(--surface));
+  --warn-soft: color-mix(in srgb, var(--warn) 14%, var(--surface));
+  --bad-soft: color-mix(in srgb, var(--bad) 14%, var(--surface));
+  --shadow: 0 3px 16px rgb(24 24 39 / 5%);
+  font-family: var(--font-primary);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+.v-application .v-application__wrap { min-height: 100dvh; }
+.shell .sidebar {
+  background: rgb(var(--color-primary-base));
+  color: #fff; padding: 24px 12px; border: 0;
+}
+.sidebar .brand { padding: 0 12px 28px; font-size: 20px; font-weight: 700; }
+.brand img { width: 36px; height: 36px; }
+.sidebar .nav-item { color: rgb(255 255 255 / 78%); min-height: 46px; margin-bottom: 4px; padding: 0 12px; }
+.sidebar .nav-item .v-btn__content { width: 100%; justify-content: flex-start; gap: 10px; }
+.sidebar .nav-item .badge { margin-left: auto; }
+.sidebar .nav-item.active { background: rgb(var(--color-brand) / 18%); color: #fff; }
+.sidebar .nav-item.active::before { content: ''; position: absolute; left: 0; height: 22px; width: 3px; background: rgb(var(--color-brand)); border-radius: 4px; }
+.sidebar-foot { margin-top: auto; padding: 24px 12px 0; font-size: 11px; opacity: .7; }
+.shell .topbar { min-height: 72px; padding-inline: 24px; }
+.topbar .page-name { font-size: 18px; font-weight: 700; }
+.topbar .live { margin-left: 12px; }
+.v-application .pill.v-chip { font-family: var(--sans); font-weight: 600; border: 0; }
+.v-application .btn.v-btn { border: 0; min-height: 34px; }
+.v-application .chip.v-btn { border: 0; border-radius: var(--radius-chip); padding-inline: 14px; }
+.v-application .chip.v-btn.active { background: var(--accent); color: rgb(var(--v-theme-on-secondary)); }
+.toolbar .v-input { flex: 0 1 240px; min-width: 180px; }
+.toolbar .v-field { background: var(--surface); }
+.drawer { border-radius: var(--radius-container) 0 0 var(--radius-container); }
+.palette { border-radius: var(--radius-card); overflow: hidden; }
+.meter .track { border-radius: 8px; overflow: hidden; }
+@media (max-width: 800px) {
+  .shell .sidebar { padding: 8px; gap: 4px; }
+  .sidebar .nav-item { flex-shrink: 0; }
+  .sidebar-foot { display: none; }
+  .topbar .live { margin-left: 0; }
+  .toolbar .v-input { flex-grow: 1; }
+}

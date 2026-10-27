@@ -1,0 +1,23 @@
+{
+  "name": "kubemap-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "node --test \"src/lib/*.test.js\""
+  },
+  "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "@vue-flow/core": "^1.48.2",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "vue": "^3.5.0",
+    "vuetify": "^4.2.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.0",
+    "vite": "^6.4.5"
+  },
+  "license": "MIT"
+}

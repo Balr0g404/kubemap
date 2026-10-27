@@ -1,0 +1,7 @@
+# Couches facultatives : premier motif fnmatch correspondant.
+# Les autres namespaces sont regroupés dans « Autres ».
+layers:
+  - name: Kubernetes
+    namespaces: [kube-system, kube-public, kube-node-lease]
+  - name: Applications
+    namespaces: [default]
